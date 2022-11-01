@@ -1,0 +1,367 @@
+* {
+    color: #ffff;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    clear: both;
+    word-wrap: normal;
+    font-size: 1.7vw;
+}
+.remove-all-styles *{ 
+    all:revert;
+}
+.container{
+    font-size: 8.5vw!important;
+}
+
+.container2 {
+    font-size: 8em;
+}
+
+.container2 .func {
+    display: inline-block;
+    margin: auto;
+    padding: 2em 1em;
+    font-size: 0.125em;
+
+}
+.comments{
+    margin: 1.5vw;
+}
+
+.index {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.index>li {
+    color: rgb(221, 42, 69);
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: dotted underline;
+    box-shadow: 0.3em 0.3em 0.5em rgb(218, 251, 168);
+    border: 0.1em solid rgb(4, 10, 4);
+    padding: 0.4em 0.8em;
+    border-radius: 4em;
+    background-color: rgb(66, 236, 245);
+}
+
+.index ol {
+    margin-top: 2em;
+    border: 0.1em solid wheat;
+    padding: 1em 3em;
+    background-color: aquamarine;
+    border-radius: 1em;
+}
+
+.index ol a {
+    text-decoration: none;
+   
+    font-weight: bold;
+    font-size: 1.1em;
+    color: black;
+
+
+}
+
+.index ol li {
+    padding: 0.5em;
+    width: fit-content;
+    color: black;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all .5s ease-out;
+
+}
+
+.index ol li:hover {
+    font-size: 1.4em;
+}
+
+body {
+    background-color: black;
+}
+
+.heading {
+    
+    background-color: aqua;
+    background-image: url(https://media.istockphoto.com/vectors/normal-distribution-diagram-or-bell-curve-on-blackboard-vector-id586931208?k=6&m=586931208&s=170667a&w=0&h=x4jViRC6QwAJ94HTtGLlKd7m5KSB9a_Vp8OpGlkbLDA= );
+    background-size: contain;
+    padding: 5px;
+    margin: 20px;
+    height: max-content;
+    border-radius: 40px;
+    border: 5px solid rgb(239, 241, 239);
+    animation-name: straight;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+
+
+
+}
+
+
+
+
+
+.head {
+    text-decoration: none;
+    background-color: rgba(67 5 104 / 95%);
+    box-shadow: 0.25em 0.25em 0.5em rgb(96, 178, 249);
+
+    color: rgb(177 234 49);
+    font-weight: bolder;
+    width: max-content;
+    border: 2px dotted rgb(246, 245, 250);
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.8%;
+    transition: all 0.7s ease-in;
+}
+
+.head:hover {
+    background-color: rgb(213, 213, 42);
+    color: blueviolet;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: 4px solid green;
+    text-shadow: 0.06em 0.08em 0.09em #02040b;
+}
+
+.intro {
+    align-items: center;
+    padding: 1vw 3vw;
+    margin: 1.75vw;
+    border: 2px dashed rgb(254, 253, 253);
+    border-radius: 20px;
+    background-color: rgb(49, 48, 48);
+    height: fit-content;
+    overflow: hidden;
+    
+    /* font-size: 1vw; */
+}
+
+h1:hover {
+    background-color: rgb(48, 253, 249);
+    animation-play-state: paused;
+    cursor: pointer;
+    color: rgb(198, 80, 80);
+    box-shadow: 0.25em 0.25em 0.6em rgb(211, 239, 155);
+    text-decoration: none;
+
+    text-shadow: 0.06em 0.08em 0.09em #02040b;
+}
+
+.blackcolor li {
+
+    color: black;
+}
+
+.blackcolor {
+    display: inline-block;
+
+    background-image: url(https://media.istockphoto.com/vectors/set-of-normal-distribution-diagram-on-old-paper-background-vector-id669384404?k=6&m=669384404&s=170667a&w=0&h=oKQ2U3v1GB4ScZVxv8kGAR6gz6Nfd8H_juzSqkWqopA=);
+    background-size: cover;
+    position: relative;
+
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    font-size: 1em;
+    padding:1em 2em;
+    width: max-content;
+
+    height: fit-content;
+
+    font-family: 'Dancing Script', cursive, Georgia, 'Times New Roman', Times, serif;
+
+    border-color: rgb(44, 240, 174);
+    border-style: solid;
+    border-width: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-position: center center;
+    box-sizing: border-box;
+
+
+}
+
+h2 {
+    text-align: center;
+    border-radius: 1em;
+
+    border: 0.1em solid white;
+    background-color: green;
+    padding: 1em;
+    font-weight: bolder;
+    box-shadow: 0.25em 0.25em 0.5em rgb(196, 237, 33);
+    text-shadow: 0.06em 0.08em 0.09em #02040b;
+}
+
+H1 {
+    display: inline;
+    /* hexcolors */
+    color: rgb(43, 40, 226);
+    width: fit-content;
+    background-color: rgb(219, 242, 91);
+    align-content: center;
+    position: relative;
+    top: 25%;
+    padding: 1%;
+    font-size: 2em;
+    /* while using border we should not use comma(,); */
+    border: 5px dashed rgb(86, 32, 32);
+    text-decoration: dashed underline;
+    /* text-align: center; */
+    border-radius: 50px;
+    transition: all 2s ease-out;
+    right: 0%;
+    animation-name: to_and_fro;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /* animation-delay: 9s; */
+    animation-direction: alternate;
+}
+
+@keyframes to_and_fro {
+
+    from {
+        margin-left: 0vw;
+
+
+    }
+
+    to {
+        margin-left: 60vw;
+    }
+}
+
+@keyframes straight {
+    55% {
+        box-shadow: 0.45em 0.25em 0.6em rgb(205, 23, 205);
+    }
+
+    from {
+        width: 35vw;
+    }
+
+    to {
+        width: 94vw;
+    }
+
+}
+
+.leftcontainer {
+
+    color: #ffff;
+    float: left;
+    /* width: max-content; */
+    overflow: auto;
+    width:50%;
+}
+
+.rightcontainer {
+    
+  position: absolute;
+
+    /* position: absolute; */
+    color: #ffff;
+    /* float: right;           width:70%; */
+    height: fit-content;
+    width: fit-content;
+    padding: 8px;
+    align-self: start;
+    
+    overflow: auto;
+    right: 3vw;
+    border: 2px solid white;
+    background-color: rgb(26, 15, 100);
+    box-sizing: content-box;
+}
+
+.comments {
+    position: absolute;
+    background-color: rgb(12, 76, 64);
+    color: #ffff;
+    /* float: right;           width:70%; */
+    padding: 8px;
+    align-self: start;
+    /* margin: 20% 0px 0px 23%; */
+    overflow: hidden;
+    right:5%;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.top {
+    position: fixed;
+    bottom: 3vh;
+    right: 3vw;
+    border: 0.1em solid white;
+    padding: 0.3em;
+    border-radius: 2em;
+    background-color: rgb(12, 76, 64);
+    opacity: 10%;
+    transition: all 3s ease-out;
+}
+
+.top a {
+    text-decoration: none;
+}
+
+.top:hover {
+    opacity: 100%;
+    box-shadow: 0.25em 0.25em 1em pink;
+    background-color: blue;
+}
+
+
+
+
+.bigbrackets {
+    display: inline;
+    /* font-size: 5em; */
+    font-style: normal;
+    float: left;
+    width: 3%;
+}
+
+.func {
+    /* position: absolute; */
+    display: inline-block;
+    margin: auto;
+    padding: 1.5em 1em;
+    font-size: 0.2em;
+
+}
+
+.Normal {
+    height: 20vw;
+    width: 30vw;
+    border: 0.2vw solid rgb(54, 171, 230);
+    border-radius: 10%;
+    margin: .5vw;
+    clear: both;
+}
+
+.rightcontainers {
+    
+    position:absolute;
+    color: #ffff;
+    right: 3vw;
+    width: 40%;
+    height: 79%;
+    
+    float:right;
+    
+    padding: 18px;
+    align-self: start;
+
+    border: 2px solid white;
+    background-color: rgb(26, 15, 100);
+    overflow: auto;
+
+}

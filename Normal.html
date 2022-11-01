@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE= edge">
+    <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+    <title>Normal Distribution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family= Dancing+Script&family= Roboto:wght@100&display= swap"
+        rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width:1000px)" href="phone.css">
+    
+    <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+</head>
+
+<body>
+    <div class="heading">
+        <H1>Normal Distribution</H1>
+    </div>
+    <span class="top"><a href="#">Go to the top</a></span>
+    <div class="intro cmath">
+        <ul class="index">
+            <li>Contents
+
+            </li>
+            <ol>
+                
+                    <li><a href="#1">Introduction</a></li>
+                
+                
+                    <li><a href="#2">PDF of N(0,1)</a></li>
+                
+                
+                    <li><a href="#3">DF of N(0,1)</a></li>
+                
+                
+                    <li><a href="#4">Remarks</a></li>
+                
+                
+                    <li><a href="#5">MGF</a></li>
+                
+                
+                    <li><a href="#6">Recursion Relation</a></li>
+                
+                
+                    <li><a href="#7">Fractiles</a></li>
+                
+                
+                    <li><a href="#8">Problem-1</a></li>
+                
+                
+                    <li><a href="#9">Problem-2</a></li>
+                
+                
+                    <li><a href="#10">Reproductive Property of Normal Distribution</a></li>
+                
+                
+                    <li><a href="#11">Some Special Cases</a></li>
+                
+                
+                    <li><a href="#12">Result</a></li>
+                
+                
+                    <li><a href="#13">Expansion of
+                        1
+                        −
+                        Φ
+                        (
+                        x
+                        )
+                        ,  
+                        x
+                        >
+                        0</a></li>
+                
+                
+                    <li><a href="#14">Another form of
+                        1
+                        −
+                        Φ
+                        (
+                        x
+                        )
+                        ,  
+                        x
+                        >
+                        0</a></li>
+                
+
+            </ol>
+        </ul>
+    </div>
+    <div class="intro cmath floatleft">
+        <ul>
+            <li class="head" id="1">Introduction</li>
+            <div>
+
+
+                <p>Normal distribution often known as
+                    <strong>Gaussian distribution</strong> is a very much popular distribution among the statisticians.
+                </p>
+                <p>Normal distribution has the following properties-</p>
+                <ol class="blackcolor">
+                    <li>Bell shaped</li>
+                    <li>Symmetric</li>
+                    <li>Not a heavy tail</li>
+                </ol>
+                <p>Suppose the pdf of the distribution `f(x) &prop; e^(-ax^2), a>0;`</p>
+                <p>So, `f(x)= ke^(-ax^2), k>0;`</p>
+            </div><div>
+            <div class="leftcontainer">
+                <p>Now `int_RRe^(-ax^2)dx`
+                    = `2int_(0)^ooe^(-ax^2)dx`</p>
+                <p>= `int_(0)^ooy^(1/2-1)e^(-ay)dy` = `sqrt(pi/a)`</p>
+            </div>
+            <div class="rightcontainer">Let `y = x^2 `
+                <br>`dy=2xdx `
+                <br>`dx=1/2y^(-1/2)dy`
+            </div></div>
+
+
+            <div style="clear:both">
+                <div>
+                    <p>Hence, `k = sqrt(a/pi)`
+                        <br>
+                        `E(X) = kint_RRxe^(-ax^2)dx `</p>
+                <div class="leftcontainer">
+                <p>
+                    ` = k( int_(-oo)^0xe^(-ax^2)+ int_(0)^ooxe^(-ax^2)dx)`
+                    `= 0;`</p> </div><div class="rightcontainer"> as the integral <br> converges to some gamma </div></div>
+                    <br>
+                  <p> `E(X^2) = kint_RRx^2e^(-ax^2)dx`
+                    `= 2kint_(0)^oox^2e^(-ax^2)dx`; <span class="comments">(assuming that the integral exists which is
+                        true;)</span>
+                    <br>
+                    ` = kint_(0)^ooy^(3/2-1)e^(-ay)dy`
+                    `= k(|~3/2)/a^(3/2)
+                    = k(1/2|~1/2)/a^(3/2)`
+                    `= k(1/2sqrt(pi))/a^(3/2)=1/(2a)`
+                </p>
+                <p>
+                    `&sigma;^2=v(X) = E(X^2)-{E(X)}^2 = 1/(2a)` <span class="comments">{ as E(X)=0
+                        }</span>
+                    <br>
+                    or, `a=1/(2sigma^2)`;
+
+
+                    So, `k = sqrt(1/(2pisigma^2)) = 1/(sigmasqrt(2pi))`
+                    <br>
+                    Thus, we get `f(x)= 1/(sigmasqrt(2pi))e^(-x^2/(2sigma^2))`;
+                </p>
+            </div>
+        </ul>
+    </div>
+    <div class="intro cmath floatright">
+        <p> Define, `X^' = X + mu`<span class="comments"> where `muinRR`</span></p>
+        <p>`:. E(X^')=mu` <span class="comments"> as E(X)=0
+            </span> </p>
+        <p>PDF of X = `f(x)= 1/(sigmasqrt(2pi))e^(-x^2/(2sigma^2))` <span class="comments">`x inRR` &
+                `sigmainRR^+`</span></p>
+        <p>PDF of `X^'` = `g(x^')= 1/(sigmasqrt(2pi))e^(-(x^'-mu)^2/(2sigma^2))`<span class="comments">`x^' inRR`,
+                `muinRR` & `sigmainRR^+`</span> </p>
+        <p>g is the PDF of
+            Gaussian Distribution with mean `mu` and variance `sigma^2` and is denoted by `N(mu,sigma^2)`.
+        </p>
+        <p>Numerical values for density, cumulative density, fractiles are given in Biometrika vol. 1 for N(0,1)
+            distribution.</p>
+        <ul>
+            <li class="head" id="2">PDF of N(0,1):
+
+            </li>
+            <p>`phi(x)=1/(sqrt(2pi))e^(-x^2/2)`</p>
+            <li class="head" id="3">DF of N(0,1):</li>
+            <p>`Phi(x)=int_(-oo)^xphi(u)du`</p>
+        </ul>
+        <ul type="square">
+            <li class="head" id="4">Remarks:</li>
+            <ol>
+                <li><p>`X~N(mu,sigma^2)`
+                    <br></p>
+                </li>
+                <p>`<=>(X-mu)/sigma ~ N(0,1)` </p>
+                <p>PDF of `N(mu,sigma^2)=1/sigmaphi((x-mu)/sigma)`</p>
+                <li><div class="leftcontainer"><p> `phi(x)=phi(-x)`,&emsp;&emsp; `AAx;`
+                    <br>
+                    `Phi(x)+Phi(-x)=1`,&emsp;&emsp; `AAx;`</div><div class="rightcontainer">Proof:
+
+                        <br>`Phi(x)=int_(-oo)^xphi(u)du=1-int_(x)^(oo)phi(u)du `
+                        <br>`1+int_(-x)^(-oo)phi(u)du =
+                        1-int_(-oo)^(-x)phi(u)du =1-Phi(-x)`
+                        <br>`:.Phi(x)+Phi(-x)=1` (Proved)</p>
+                    </div>
+                </li>
+                <li><p>`g(x)=1/sigmaphi((x-mu)/sigma)`
+                    <br>`=>g(mu-x)=1/sigmaphi((-x)/sigma)
+                    `<br>`=1/sigmaphi((x)/sigma)=g(mu+x)`,
+                    &emsp13;&emsp;`AAx;`
+                    <br>:. Thus `N(mu,sigma^2)` is symmetric about `mu`.
+                    <br>`=>`Median=`mu` , Again
+                    `mu` is finite.
+                    <br>So, mean=`mu`.</p>
+                </li>
+                <p>Just ensure that the distribution is unimodal and claim mode = `mu`.
+
+                    <br>`phi(x)=1/(sqrt(2pi))e^(-x^2/(2))`
+                    <br>`=>phi^'(x)=-xphi(x)`
+                </p>
+                <p>So,`g(x)=1/sigmaphi((x-mu)/sigma) `
+                    <br>`=>g^(')(x)=1/sigma(-(x-mu)/sigma)1/sigmaphi((x-mu)/sigma)
+                    =-(x-mu)/sigma^3phi((x-mu)/sigma) `,&emsp;&emsp13;`phi>0`
+                    <br>`=>g^(')(x)=`
+                <div class="remove-all-styles container">
+                    <div class="bigbrackets" >`{`</div>
+                    <div class="func">`>0 if x&lt;mu;`
+                        <br>`=0 if x=mu;`
+                        <br>`&lt;0 if x>mu;`
+                    </div>
+                </div>
+                </p>
+                <img src="https://www.mathsisfun.com/data/images/normal-distribution-2.gif"
+                    alt="Mean of Normal Distribution" class="Normal">
+                <li><p> g is uniformly differentiable.
+                    <br>Hence,
+                    `g^('')(x)=d/dx(-(x-mu)/sigma^3phi((x-mu)/sigma))
+                    `<br>`=1/sigma^3[-phi((x-mu)/sigma)+((x-mu)/sigma)(x-mu)1/sigmaphi((x-mu)/sigma)]
+                    `<br>`=1/sigma^3phi((x-mu)/sigma){((x-mu)/sigma)^2-1}
+                    `
+                    <br>`=>g^('')(x)=0 if |(x-mu)/sigma|=0`
+                    <br>`=>x=mu+-sigma`</p>
+                </li>
+               <div>
+                <div class="leftcontainer" style="line-height: 10px;">
+                    <img class="Normal" src="https://i.stack.imgur.com/1HRU5.png"
+                    alt="Image of the Histogram of Normal distribution">
+                <p>
+                    Now `g^('')(x)=0` when `x->+-oo`
+                    <br>So, the
+                    distribution has assymptods at `+-oo.`
+                </div>
+                <div class="rightcontainer">(`:' x^2phi(x)->0` as `x->+-oo`)
+                    <br> `:' E(X^2)&lt;oo`
+                </div></div>
+                </p>
+            </ol>
+
+
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="5">MGF:</li>
+            <p><div>
+            <div class="leftcontainer">`X ~
+                N(0,1)`
+                <br>`M(t)=int_-oo^ooe^(tx-x^2/2)/sqrt(2pi)dx`
+                <br>`=e^(t^2/2)int_RRe^(-(x-t)^2/2)/sqrt(2pi)dx=e^(t^2/2)`
+            </div>
+            <div class="rightcontainer">`int_RRe^(-(x-t)^2/2)/sqrt(2pi)dx=1 `,&emsp;&emsp;&emsp;`AAt`;
+                &emsp;&emsp;&emsp;[as it is the PDF of N(t,1)]</div></div>
+            </p>
+            <div style="clear:both;">
+            <p>If `X ~ N(mu,sigma^2)`
+                <br>`M_X(t)=E(e^(tx))=e^(mut)E(e^(t(x-mu)))=e^(mut)E(e^(sigmat(x-mu)/sigma))=e^(mut)M_Z(sigmat)=e^(mut+(sigma^2t^2)/2)`<span
+                    class="comments">Clearly, Z ~ N(0,1)</span>
+            </p></div>
+            <p>Note that, Central moment generating function of `N(mu,sigma^2)` is
+
+                <br>`E(e^(t(x-mu)))`,&emsp;&emsp;&emsp;where X ~ `N(mu,sigma^2)`
+
+                <br>`=e^(-mut)E(e^(tx))=e^(-mut)M_X(t)=e^(-mut)e^(mut+(sigma^2t^2)/2)
+                `<br>`=e^((sigma^2t^2)/2)=sum_(r=0)^oo(sigma^(2r)t^(2r))/(2^rr!)`
+
+                <br>`=>mu_(2r+1)=0`
+
+                <br>Hence, all odd order central moments vanishes as the distribution is symmetric and the moments
+                exist.
+                <br>`=> mu_(2r)=(sigma^(2r))/(2^rr!)(2r)! =
+                sigma^(2r)((1.3.5.7.9........(2r-1)(2.4.6........(2r)))/(2.4.6........(2r)))``=1.3.5......(2r-1)sigma^(2r)`,&emsp;&emsp;&emsp;r
+                = 1, 2, 3,..........
+                <br>`=>mu_(2)=sigma^2`
+                <br>&emsp;`mu_(4)=3sigma^4`
+                <br>&emsp;`mu_(8)=15sigma^8`
+                <br>&emsp;`mu_(8)=105sigma^8`
+            </p>
+            <li class="head" id="6">Recursion Relation:</li>
+            <p>`mu_(2r)=(sigma^(2r))/(2^rr!)(2r)!`
+                <br>`mu_(2r)=(2r-1)sigma^(2)mu_(2r-2)`</p>
+            <p>`K_X(t)=lnM_X(t)=lne^(mut+(sigma^2t^2)/2)=mut+(sigma^2t^2)/2`
+                <br>`=>`
+            <div class="remove-all-styles container">
+                <div class="bigbrackets">`{`</div>
+                <div class="func">`K_1=mu`
+                    <br>`K_2=sigma^2`
+                    <br>`K_r=0`&emsp13;&emsp13;&emsp13;`AAr=3,4,5,........`
+                </div>
+                </p>
+        </ul>
+
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="7">Fractiles</li>
+            <p>X ~ N(0,1)</p>
+            <div><img src="Img/Normal.png" alt="Image of fractiles" class="Normal">
+                <span class="rightcontainer">`tau_(1-p)=-tau_p`</span>
+            </div>
+            <p>`P[(Z>tau_alpha | Z` ~` N(0,1)]= alpha` <span class="comments">`alpha in (0,1)`</span></p><br>
+            <div>
+            <div class="leftcontainer">`X ~ N(mu,sigma^2)` <p>` <=> (X-mu)/sigma ~ N(0,1)` <br></p> </div>
+            <div class="rightcontainer">`tau_alpha=(1-alpha)`th fractile of `N(0,1)` <br>`epsilon_p=p`th fractile of
+                N(0,1) , (0&lt;p&lt;1)</div></div>
+            <p>`P(X<=epsilon_p)=p=> P(Z<=(epsilon_p-mu) /sigma)=p`<span class="comments"> Z ~ N(0,1)</span></p>
+            <p>`Phi((epsilon_p-mu)/sigma)=Phi(tau_(1-p))=Phi(-tau_p)`<br>`=>epsilon_p=mu-sigmatau_p`</p>
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="8">Problems</li>
+            <div>
+            <div class="leftcontainer">
+                <p>`X ~ N(0,1)`</p>
+                <p>`rho_(x,Phi(x))=?`</p>
+                <p>`Phi(X)~U(0,1)`</p>
+                <p>`E(Phi(X))=int_RRPhi(x)phi(x)dx=int_0^1zdz=1/2`&emsp;</p>
+                <span style="background-color: rgb(7, 114, 7); border:0.1em solid white; padding:0.3em">`Phi(x)=z`
+                    `=>phi(x)dx=dz`</span>
+                <p>`E(Phi^2(X))=int_RRPhi^2(x)phi(x)dx=int_0^1z^2dz=1/3`</p>
+                <p>`:. v(Phi(X))=E(Phi^2(X))-{E(Phi(X))}^2=1/3-{1/2}^2`</p><p>`=1/3-1/4=1/12`</p>
+                <p>`E(Y)=int_0^1ydy=1/2`</p>
+                <p>`E(Y^2)=int_0^1y^2dy=1/2`</p>
+                <p>`v(Y)=E(Y^2)-{E(Y)}^2=1/3-{1/2}^2=1/3-1/4=1/12`</p>
+
+            </div>
+            <div class="rightcontainers">X: RV <br>F:df <br>F is strictly increasing on `S=X(Omega)`= Support of X
+                <br>`=>`F is 1-1 on S
+                <p>`Y=F(X)`</p>
+                <p>`P(Y<=y)=P(F(X)<=y)=P(X<=F^(-1)(y))=FF^(-1)(y)=y` </p>
+                        <div class="remove-all-styles container">
+                            <div class="bigbrackets">`{`
+                            </div>
+                            <!--style="padding:3.5% 4.5%"-->
+                            <div class="func">`0 if y&lt;=0;`
+                                <br>`y if 0&lt;y&lt;=1;`
+                                <br>`1 if y>1;`
+
+                            </div>
+                        </div>
+                        <div>
+                            <img class="Normal" src="Img/uniform.png" alt="uniform distributed Y"><img src="Img/Uniform pdf.png"
+                                alt="uniform pdf" class="Normal">
+                        </div>
+                        <p>`f_y=`
+                        <div class="remove-all-styles container">
+                            <div class="bigbrackets">`{`</div>
+                            <div class="func">`1 if 0&lt;y&lt;1;`
+                                <br><br>`0` &emsp;otherwise;
+
+
+                            </div>
+                        </div>
+                </p>
+                <p>`:.Y~U(0,1)`</p>
+            </div></div>
+</div>
+
+        </ul>
+
+    </div>
+    <div class="intro cmath">
+        <div>
+        <div class="leftcontainer">
+            <p>`E(XPhi(X))=int_RRxPhi(x)phi(x)dx=int_RRPhi(x)xphi(x)dx`<br>`=-Phi(x)phi(x)|_-oo^oo-int_-oo^oophi(x)(-phi(x)dx`
+            </p>
+            
+           
+        </div>
+        <div class="rightcontainer">
+            `phi(x)=1/(sqrt(2pi))e^(-x^2/2)`<br>`=>phi^'(x)=-xphi(x) =>intxphi(x)dx=-phi(x)+c`
+
+        </div></div>
+        <div>
+            <div class="leftcontainer">`=int_-oo^oophi^2(x)dx`<p>`=2int_0^ooe^(-x^2)/(2pi)dx=1/piint_0^ooe^(-x^2)dx`<br>
+            </div>
+        <div class="rightcontainer">Since, `Phi(x)` is bounded and `phi(x)-> 0` as `x->+-oo`</div></div>
+        <div>
+            <div class="leftcontainer">
+                <p>`=1/(2pi)int_0^ooy^(1/2-1)e^(-y)dx`</p>
+                <p>`=1/(2sqrt(pi))`<br>`:.rho_(x,Phi(x))=(E(XPhi(X))-E(X)E(Phi(X)))/(sqrt(v(X)v(Phi(X)))`</p>
+                <P>`=(1/(2sqrt(pi)))/sqrt(1/12)=(1/(2sqrt(pi)))/(1/(2sqrt3))=sqrt(3/pi)`</P>
+            </div>
+        <div class="rightcontainer">Let `x^2=y` <br>`=>2xdx=dy`<br>`dx=1/2y^(-1/2)dy`</div></div>
+        <div style="clear:both">
+           <p> `X ~N(mu,sigma^2)`<br>`MD_mu=E|x-mu|=int_RR|x-mu|1/sigmaphi((x-mu)/sigma)dx`</p>
+            <div class="leftcontainer">
+            <br>`=int_RR|sigmaz|phi(z)dz=sigma/sqrt(2pi)int_-oo^oo|z|e^(-z^2/2)dz`
+            <br>`=(2sigma)/sqrt(2pi)int_0^ooze^(-z^2/2)dz=sigmasqrt(2/pi)`</div><div
+                class="rightcontainer">`(x-mu)/sigma=z` `=>1/sigmadx=dz`</div></div>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="9">Problem</li>
+            <p> `X ~ N(mu,sigma^2)`<br>`E(Phi(X))=int_RRPhi(x)f_x(x)dx=int_RR(Y<=x)f_x(x)dx`<span class="comments">`Y ~
+                    N(0,1)`</span></p>
+            <p>`=int_RR(Y<=X|X=x)f_x(x)dx`<span class="comments">Y is independent of X.</span></p>
+            <p>`=P(Y<=X)`<span class="comments">`:'P(B)=sumP(B|E_i)P(E_i)`</span></p>
+            <p>`=P(X-Y>=0)`</p>
+            <P class="leftcontainer">`=1-Phi(-mu/sqrt(1+sigma^2))`<br>`=Phi(mu/sqrt(1+sigma^2))`</P>
+            <div class="rightcontainer">`X ~ N(mu,sigma^2)`<br>`Y ~ N(0,1)`<br>`=>X-Y~N(mu,1+sigma^2)`</div>
+
+            <p style="clear: both;">=</p>
+            <div class="remove-all-styles container2">
+                <div class="bigbrackets">{</div>
+                <div class="func">`&lt;1/2 if mu&lt;0;`
+                    <br>`=1/2 if mu=0;`
+                    <br>`>1/2 if mu>0;`
+                </div>
+                </p>
+            </div>
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="10">Reproductive Property of Normal Distribution</li>
+            <div class="leftcontainer">
+                <p>`X_1 ~ N(mu_1,sigma_1^2)`</p>
+                <p>`X_2 ~ N(mu_2,sigma_2^2)`</p>
+            </div>
+            <div class="rightcontainer">They are independent.</div>
+            <p style="clear: both;">`z=l_0 + l_1x_1 +l_2x_2 ~ ?`<span class="comments">`l_i's` are constants.</span></p>
+            <p>`M_Z(t)=E(e^(tz))=E(e^(tl_0)e^(tl_1x_1)e^(tl_2x_2))`
+            </p>
+            <div>
+            <div class="leftcontainer">
+                <p>`=e^(tl_0)E(e^(tl_1x_1))E(e^(tl_2x_2))`</p>
+                <p>`=e^(tl_0)M_(X_1)(tl_1)M_(X_2)(tl_2)`</p>
+                    <p>`=e^(tl_0)e^(mu_1t+(sigma_1^2l_1^2t^2)/2)e^(mu_2t+(sigma_2^2l_2^2t^2)/2)`</p>
+                    
+            </div>
+            <div class="rightcontainer">Using product law of expectations, since `X_1 and X_2` are independently
+                distributed</div>
+            </div>
+            <div>
+            <div class="leftcontainer"> <p>`=e^((l_0 + l_1mu_1 +l_2mu_2)t+(sigma_1^2l_1^2+sigma_2^2l_2^2)t^2/2)`</p>
+                <p><strong>`:. Z ~ N(l_0 + l_1mu_1 +l_2mu_2`&ensp;,&emsp;`sigma_1^2l_1^2+sigma_2^2l_2^2)`</strong></p></div>
+            <div class="rightcontainer">`:'` We know if MGF exists it determines <br> the corresponding probability
+                distribution uniquely.</div>
+            </div>
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul type="square">
+            <li class="head" id="11">Some Special Cases</li>
+            <p>`X ~ N(mu,sigma^2) <=>X+c ~ N(mu+c,sigma^2)`</p>
+            <p>`X ~ N(0,sigma^2) <=>-X ~ N(0,sigma^2)`</p>
+            <p>`X_i ~^(i nd) N(mu_i,sigma_i^2)`,&emsp;i=1,2</p>
+            <p>`P(X_1>X_2)`</p>
+            <p>`=P(X_1-X_2>0)`<span class="comments">`X_1-X_2~N(mu_1-mu_2,sigma_1^2+sigma_2^2)`</span></p>
+            <p>`=P(Z> -(mu_1-mu_2)/sqrt(sigma_1^2+sigma_2^2)|Z~N(0,1))`</p>
+            <p>`=1-Phi(-(mu_1-mu_2)/sqrt(sigma_1^2+sigma_2^2))`
+                <br>`=Phi((mu_1-mu_2)/sqrt(sigma_1^2+sigma_2^2))`</p>
+            <p>`:.Phi(0)=1/2 if mu_1=mu_2`</p>
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="12">Result</li>
+            <p>`1-1/x^2<=(x(1-Phi(x))) /(phi(x))<=1`,&emsp;`x>0`</p>
+            <div class="leftcontainer">
+                <p>`1-Phi(x)=int_x^oophi(u)du=int_x^oo(1/u)uphi(u)du`
+                    <br>&emsp;&emsp;&emsp;&emsp;`<=int_x^oo1 /xuphi(u)du=(-phi(u)|_x^oo)/x`</p>
+                        <p>&emsp;&emsp;&emsp;&emsp;`=(phi(x))/x`</p>
+                        <p>`=>(x(1-Phi(x)))/(phi(x))
+                            <=1`&emsp;&emsp;&emsp;&emsp;&emsp;..........(a) </p>
+                               
+
+            </div>
+            <div class="rightcontainer">
+                `phi(x)=1/(sqrt(2pi))e^(-x^2/2)`<br>`=>phi^'(x)=-xphi(x) =>intxphi(x)dx=-phi(x)+c`
+
+            </div>
+            <div style="clear: both;">
+                <p><br>`1-Phi(x)=int_x^oophi(u)du=int_x^oo(1/u)uphi(u)du`
+                </p>
+                  <p>  `=-1/uphi(u)|_x^oo-int_x^oo(-1/u^2)(-phi(u))du`</p>
+                   <p> `=(phi(x))/x-int_x^oo(1/u^3)uphi(u)du`</p>
+                <p>`=(phi(x))/x-[-1/uphi(u)|_x^oo-3int_x^oo((phi(u))/u^4)du]`</p>
+                <p>`=(phi(x))/x-(phi(x))/x^3+3int_x^oo((phi(u))/u^4)du`</p>
+                <p>`>=(phi(x))/x(1-1/x^2)`<span class="rightcontainer">`:'int_x^oo(phi(u))/u^4du>=0`</span></p>
+                <p>`:.(x(1-Phi(x)))/(phi(x))>=1-1/x^2`&emsp;&emsp;&emsp;&emsp;&emsp;..........(b)
+                </p>
+                <p>Combining (a) and (b) we get the result.</p>
+                <li class="head">Corollary:</li>
+                <p>`lim_(n->oo)(x(1-Phi(x)))/(phi(x))=1`</p>
+            </div>
+
+        </ul>
+    </div>
+    <div class="intro cmath">
+        <ul>
+            <li class="head" id="13">Expansion of `1-Phi(x)`, &emsp;`x>0`</li>
+            <p>`1-Phi(x)=ubrace((phi(x))/x-(phi(x))/x^3+(1.3phi(x))/x^5+......+?)_("r terms")+R_r(x)`</p>
+            <p>`(phi(x))/x-(phi(x))/x^3+3int_x^oo((phi(u))/u^4)du`
+                <br>`=(phi(x))/x-(phi(x))/x^3+3int_x^oo(1/u^5uphi(u))du`
+                <br>`=(phi(x))/x-(phi(x))/x^3+3[-1/u^5phi(u)|_x^oo-5int_x^oo((phi(u))/u^6)du]`
+            </p>
+            <p>`=(phi(x))/x-(phi(x))/x^3+(1.3phi(x))/x^5-1.3.5int_x^oo((phi(u))/u^6)du`
+                <br>`=(phi(x))/x-(phi(x))/x^3+(1.3phi(x))/x^5-(1.3.5......(2r-3)phi(x))/x^(2r-1)+R_r(x)`
+            </p>
+            <p>`R_r(x)=` Remainder term following r terms`=(-1)^r1.3.5......(2r-1)int_x^oo((phi(u))/u^(2r))du`</p>
+            <h2>Show that `color(red)(|R_r(x)|< |"Previous Term"|)`<br>`<=>(2r-1)int_x^oo(phi(u))/u^(2r)<(phi(x))
+                            /x^(2r-1)`</h2>
+                            <li class="head">Proof:</li>
+                            <p>`(2r-1)int_x^oo(phi(u))/u^(2r)=(2r-1)[phi(u)(u^(-2r+1)/(-2r+1))|_x^oo-int_x^oophi^'(u)(u^(-2r+1)/(-2r+1))du]`
+                            </p>
+                            <p>`=(2r-1)[-phi(x)(x^(-2r+1)/(-2r+1))-int_x^oo-uphi(u)(u^(-2r+1)/(-2r+1))du]`</p>
+                            <p>`=(2r-1)[phi(x)(x^(-2r+1)/(2r-1))-int_x^oo-uphi(u)(u^(-2r+1)/(2r-1))du]`</p>
+                            <p>`=(phi(x))/x^(2r-1)-ubrace(int_x^oo((phi(u))/u^(2r-2))du)_(>0)<(phi(x)) /x^(2r-1)`<span
+                                    class="comments">Proved</span></p>
+                            <li class="head" id="14">Another form of `[1-Phi(x)]`</li>
+                            <img class="Normal" src="Img/Normal2.png" alt="Normal distribution">
+                            <p>`1-Phi(x)=1/2-int_0^xphi(u)du=1/2-int_0^x1/(sqrt(2pi))e^(-u^2/2)du`</p>
+                            <p>`=1/2-1/(sqrt(2pi))int_0^xsum_(r=0)^oo(-u^2/2)^r/(r!)du=1/2-1/(sqrt(2pi))sum_(r=0)^oo(-1)^r/(2^rr!)int_0^xu^(2r)du=1/2-1/(sqrt(2pi))sum_(r=0)^oo(-1)^r/(2^rr!)x^(2r+1)/(2r+1)`
+                            </p>
+                            <li>We adopt the former expansion of `1-Phi(x)` when `x` lies on the right tail of the
+                                distribution and we adopt the latter when `x` is closed to 0.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
