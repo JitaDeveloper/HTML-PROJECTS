@@ -21,9 +21,12 @@ H1{
 .container2 .func {
     display: inline-block;
     margin: auto;
-    padding: 2em 1.5em;
+    padding: 2vw 1.5vw;
     font-size: 0.125em;
 
+}
+.func{
+    padding:1.8vw 2vw;
 }
 .heading{
     animation:none;
