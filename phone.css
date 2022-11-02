@@ -18,11 +18,14 @@ H1{
 .intro{
     padding: 3vw 5vw;
 }
+.container2{
+    font-size: 10em;
+}
 .container2 .func {
     display: inline-block;
     margin: auto;
     padding: 3vw 4.5vw;
-    font-size: 0.125em;
+    font-size: 0.1em;
 
 }
 .func{
