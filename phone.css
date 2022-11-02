@@ -11,6 +11,14 @@
     margin:1.5vw;
 
 }
+.leftcontainer {
+
+    color: #ffff;
+    float: left;
+    /* width: max-content; */
+    overflow: auto;
+    width:fit-content;
+}
 H1{
     animation: none;
     margin:auto;
