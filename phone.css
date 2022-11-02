@@ -17,7 +17,7 @@
     float: left;
     /* width: max-content; */
     overflow: auto;
-    width:fit-content;
+    width:70%;
 }
 H1{
     animation: none;
